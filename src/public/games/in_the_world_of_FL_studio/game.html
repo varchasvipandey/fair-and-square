@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/style/style.css" />
+    <title>In The World of FL Studio</title>
+  </head>
+  <body class="game-html">
+    <div class="game-canvas">
+      <script src="/static/gameScripts/in_the_world_of_FL_studio.js"></script>
+    </div>
+
+    <div class="functional-buttons">
+      <div id="redirect">
+        <a class="btn btn-dark" onclick="sendScore()"
+          ><i class="fas fa-door-open"></i> Exit</a
+        >
+      </div>
+      <div id="control">
+        <button class="btn btn-dark" id="btn-mute" onclick="pauseSound()">
+          <i class="fas fa-volume-mute"></i>
+        </button>
+        <button class="btn btn-dark"><i class="fas fa-volume-off"></i></button>
+        <button class="btn btn-dark ml-4">
+          <i class="fas fa-question-circle"></i>
+        </button>
+        <a href="/game1" class="btn btn-dark"><i class="fas fa-reply"></i></a>
+      </div>
+    </div>
+
+    <!--MODALS-->
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Notification</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Scores updated successfully</p>
+            <p>Ready for another round?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              onclick="reload()"
+              data-dismiss="modal"
+            >
+              Yes, continue playing
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="exit()"
+              data-dismiss="modal"
+            >
+              No, exit to menu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--END MODALS-->
+
+    <!--Bootstrap JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!--CUstome JS-->
+
+    <script>
+      function sendScore() {
+        const score = parseInt(localStorage.getItem("currentHighScore"));
+        if (score === null) {
+          window.location.replace("/home");
+          return;
+        }
+        const data = {
+          name: localStorage.getItem("name"),
+          token: localStorage.getItem("token"),
+          score
+        };
+        $.ajax({
+          url: "/users/score",
+          method: "PATCH",
+          data,
+          success: function(userData) {
+            //const exit = confirm("Scores updated successfully. Exit game now?");
+            $(".modal").modal();
+            //if (exit) window.location.replace("/home");
+          },
+          error: function(error) {
+            window.location.replace("/home");
+          }
+        });
+      }
+      //extra functions
+      function reload() {
+        window.location.replace("/game1");
+      }
+      function exit() {
+        window.location.replace("/home");
+      }
+    </script>
+  </body>
+</html>

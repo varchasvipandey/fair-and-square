@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous" 
+    />
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
+      crossorigin="anonymous" 
+    />
+    <!--lightbox-->
+    <link rel="stylesheet" href="/static/lib/lightbox.css" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/static/style/style.css" />
+    <title>Fair And Square: Play Fair</title>
+    <link rel="icon" href="/static/img/icons/icon-96.png" type="image/png" sizes="96x96" />
+    
+    <link rel="manifest" href="/app/manifest.json" />
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="social-nav">
+              <a class="btn" id="download-button"><i class="fas fa-download"></i></a>
+              <a class="btn disabled"><i class="fas fa-user"></i></a>
+              <a class="btn" id="logged-in-as" data-toggle="modal" data-target="#logged-in-modal">GUEST</a>   
+              
+              
+              <!--  
+              
+              <a><i class="fab fa-app-store"></i></a>
+              <a><i class="fab fa-twitter"></i></a> 
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="landing-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <img class="img img-responsive logo" src="/static/img/logo.png" alt="fairAndSquare" width="100%" height="auto">
+            <div class="nav-buttons">
+              <a href="#game-select" class="btn btn-lg btn-dark" id="lets-play"><i class="fas fa-gamepad"></i> Let's Play</a>
+              <button class="btn btn-lg btn-dark" id="login-if-not" onclick="guestLogin()"><i class="fas fa-user"></i>  Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game-select">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Select a game</h2>
+            <div id="accordion" class="games-list">
+
+              <div class="card mb-2">
+                <div class="card-header" id="headingOne">
+                  <h3 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      In The World Of FL Studio
+                    </button>
+                  </h3>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" aria-labelledby="headingOne" data-parent="#accordion" aria-expanded="false">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <img class="img img-responsive" src="/static/img/fl-title.jpg" alt="FLStudio" width="100%" height="auto">
+                      </div>
+                      <div class="col-md-8">
+                        <p>
+                          After producing music continuously for 3 days, <strong style="color: rgb(29, 152, 223);">Martin Garrix</strong> felt a strong headache. For the sake of pain 
+                          relief, he decided to sleep. Suddenly he realized that he has entered into The World Of FL Studio. Every 
+                          time he touches a fruit it disappears and adds on to his score. He is very confused now and has no other 
+                          option but to continue whats going on. The fruits continue to respawn and after every respawn, FL Studio's 
+                          rival Ableton attacks Martin Garrix. Help Martine Garrix to stay alive in his dream.
+                        </p>
+                        <button class="btn btn-light" data-toggle="modal" data-target="#full-screen-prompt">Start Game</button>
+                        <button class="btn btn-light" id="game-1-inst-modal-button" data-toggle="modal" data-target="#game-1-inst-modal">Instructions</button>
+                        <!--end-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mb-4">
+                <div class="card-header" id="headingTwo">
+                  <h3 class="mb-0">
+                    <button class="btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Dragon Pong
+                    </button>
+                  </h3>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <img class="img img-responsive" src="/static/img/pong-tile.jpg" alt="DragonPong" width="100%" height="auto">
+                      </div>
+                      <div class="col-md-8">
+                        <p>
+                        A <strong style="color: rgb(253, 176, 33);">Dragon Ball</strong> from an overrated anime came in this world from nowhere. This ball is yellow coloured and looks too damn creepy that
+                        dragons are afraid of getting close to it. The locals of the region have named this ball "Yellowish Junk".<br>
+                        The lords of the dragon world are fighting each other to protect their town from this Yellowish Junk. A town can take
+                        only two hits of this junk before getting destroyed completely.<br>
+                        This is not a joke, the fight is on!
+                        </p>
+                        <button class="btn btn-light" data-toggle="modal" data-target="#full-screen-prompt-2">Start Game</button>
+                        <button class="btn btn-light" id="game-2-inst-modal-button" data-toggle="modal"
+                          data-target="#game-2-inst-modal">Instructions</button>
+                        <!--END-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4" id="leader-board-and-game-instructions">
+            <h2>Leaderboard</h2>
+
+            <div id="leader-board-filter" class="mb-2">
+              <!--
+              <button class="btn btn-secondary" id="show-top-five">TOP 5</button>
+              <button class="btn btn-secondary" id="show-top-ten">TOP 10</button>
+              <button class="btn btn-secondary" id="show-top-twenty">TOP 20</button>
+              -->
+            </div>
+
+            <table class="table table-dark table-striped" id="leader-board">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Players</th>
+                  <th>Scores</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--Top 5-->
+                         
+              </tbody>
+            </table>
+
+            <h2><span style="color: rgba(166, 235, 197, 0.801)">Active</span> | <span style="color: rgba(238, 222, 131, 0.863)">Upcoming</span></h2>
+            <!--Updates news and feeds-->
+            <div id="update-list" class="mb-4">
+              <ul class="list-group" id="updates-list">
+                <!--Update List-->
+              </ul>
+            </div>
+
+            <!--MODALS-->
+            <!--In The World Of FL Studio-->
+            <div class="instruction-box" id="game-1-inst">
+              <!--Instruction modal: In the world of FL Studio-->
+              <div class="modal fade" id="game-1-inst-modal" tabindex="-1" role="dialog" aria-labelledby="game-1-inst-modalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="game-1-inst-modalTitle">In The World Of FL Studio :: Instruction</h5>
+                    </div>
+                    <div class="modal-body">
+                      <p>Genre: Platformer</p>
+                      <p>Objective: Survival</p><br>
+                      <p>Collect all the fruits which are infinite in number. These fruits are FL Studio mango, 
+                        which can't be eaten.<br>The game starts with 18 fruits which can be collected easily without 
+                        getting into trouble. Each fruit collected will give Martin 10 points.<br><br>After every collection of 
+                        18 fruits, a bomb will be spawned. This will not explode but will bounce all over the game screen. 
+                        <br>This bomb is Ableton, avoid colliding with it.<br><br>That is not it, Ableton will be spawned 
+                        after every 18th fruit collected. So Martin may end up between a bunch of Ableton.<br><br>Try beating 
+                        the developers high-score because playing this will not bring Martin out from his dream.<br>But don't you 
+                        worry, don't you worry child<br>See heaven's got a plan for you!<br><br>Yes, Swedish House Mafia is on a 
+                        rescue mission. But the sad news is, he is rescuing the child not Martin. So survive as long as you can. <br><br>
+                        GOOD LUCK!!<br><br>
+                        
+                        <span>Click the image to see more.</span>
+                      </p>
+                      <a href="/static/img/img1.jpg" data-lightbox="gameplay"><img class="img img-responsive" src="/static/img/img1.jpg" width="100%"></a>
+                      <!--sliding images-->
+                      <a href="/static/img/img2.jpg" data-lightbox="gameplay"></a>
+                      <a href="/static/img/img3.jpg" data-lightbox="gameplay"></a>
+                      <a href="/static/img/img4.jpg" data-lightbox="gameplay"></a>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#full-screen-prompt">Start Game</button>
+                    </div>
+                  </div>
+                </div>
+              <!--End-->
+            </div>
+          </div>
+
+          <!--DRAGON PONG-->
+          <div class="instruction-box" id="game-2-inst">
+            <!--Instruction modal: Dragon Pong-->
+            <div class="modal fade" id="game-2-inst-modal" tabindex="-1" role="dialog" aria-labelledby="game-2-inst-modalTitle"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="game-2-inst-modalTitle">Dragon Pong :: Instruction</h5>
+                  </div>
+                  <div class="modal-body">
+                    <p>Genre: Multiplayer-Sports</p>
+                    <p>Objective: Protect Area</p><br>
+                    <p>
+                      This is a multiplayer only ping-pong game. Each player has to protect the wall behind the board. These boards are lords of their world. No one cares from where
+                      they are because everyone wants to win.<br><br>
+                      Player-1 CONTROLS:<br>
+                      <strong style="color: rgb(59, 196, 17);">W</strong>: Move up<br>
+                      <strong style="color: rgb(59, 196, 17);">S</strong>: Move down<br><br>
+                      Player-2 CONTROLS:<br>
+                      <strong style="color: rgb(17, 184, 196);">⇑</strong>: Move up<br>
+                      <strong style="color: rgb(17, 184, 196);">⇓</strong>: Move down<br><br>
+                      The player who fails to protect its area for <strong style="color: rgb(240, 29, 29);">2 Times</strong> will be declared as the loser.<br><br>
+                      GOOD LUCK!!!<br><br>
+                      <span>Click the image to see more.</span>
+                    </p>
+                    <a href="/static/img/img5.png" data-lightbox="gameplay2"><img class="img img-responsive" src="/static/img/img5.png"
+                        width="100%"></a>
+                    <!--sliding images-->
+                    <a href="/static/img/img6.png" data-lightbox="gameplay2"></a>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#full-screen-prompt-2">Start
+                      Game</button>
+                  </div>
+                </div>
+              </div>
+              <!--End-->
+            </div>
+          </div>
+        </div>
+        
+        <!--Full screen prompt modal-->
+        <!--In The World Of FL Studio-->
+        <div class="modal fade" id="full-screen-prompt" tabindex="-1" role="dialog" aria-labelledby="full-screen-promptLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="full-screen-promptLabel">Display Setting</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Press F11 on any modern browser: Edge | Chorme | Firefox <br>
+                Click Let's Go to continue.
+              </div>
+              <div class="modal-footer">
+                <a type="button" class="btn btn-success" id="lets-go-button" style="text-decoration: none; color:white; display: inline" href="/game1">Let's GO</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Dragon Pong-->
+        <div class="modal fade" id="full-screen-prompt-2" tabindex="-1" role="dialog" aria-labelledby="full-screen-promptLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="full-screen-promptLabel">Display Setting</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Press F11 on any modern browser: Edge | Chorme | Firefox <br>
+                Click Let's Go to continue.
+              </div>
+              <div class="modal-footer">
+                <a type="button" class="btn btn-success" id="lets-go-button"
+                  style="text-decoration: none; color:white; display: inline"
+                  href="/game2">Let's GO</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End-->
+
+        <!--LOGGED IN USER MODAL-->
+        <div class="instruction-box" id="logged-in">
+          <div class="modal fade" id="logged-in-modal" tabindex="-1" role="dialog" aria-labelledby="logged-in-modalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="logged-in-modalTitle">
+                    Player Details
+                  </h5>
+                </div>
+                <div class="modal-body" id="player-info">
+                  <p>Name: {{NAME}}</p>
+                  <p>Highscore: {{SCORE}}</p>
+                  <p>Member since: {{CREATEDAT}}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-info" data-dismiss="modal" onclick="logout()">
+                    Logout
+                  </button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#delete-account-modal">
+                    Delete Account
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--LOGGED IN MODAL END-->
+        <!--DELETE ACCOUNT MODAL-->
+        <div class="instruction-box" id="delete-account">
+          <div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog"
+            aria-labelledby="delete-account-modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="delete-account-modalTitle">
+                    Confirm Delete
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    It's sad that you want to leave this platform. We'll suggest you to stay and mail us about the application's drawbacks
+                    so that we can make you happy again. Still, if you are sure about your decision of leaving, please consider reading the
+                    following terms:
+                  </p>
+                  <hr style="background: white;">
+                
+                  <p style="color: red;">1) Your highscore and other data will be deleted permanentaly.</p>
+                  <p>2) You won't be able to compete with the world without creating a new account.</p>
+                  <p>3) We'll miss you.</p>
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-info" data-dismiss="modal">
+                    Don't Delete
+                  </button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteAccount()">
+                    Confirm Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--DELETE ACCOUNT MODAL END-->
+        
+      </div>
+    </section>
+    
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-4" id="copyright">
+            <p>Copyright &copy; Fair & Square<br>
+              www.fairandsquare.com<br>
+              2019
+            </p>
+          </div>
+
+          <div class="col-md-4" id="developer">
+            <p>Designed & Developed:<br>
+              Varchasvi Pandey
+            </p>
+          </div>
+
+          <div class="col-md-4" id="developer-links">
+            <a><i class="fab fa-github"></i></a>
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+          </div>
+
+        </div>
+      </div>
+      
+    </footer>
+
+    
+    <!-- jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Lightbox-->
+    <script src="/static/lib/lightbox.js"></script>
+    <!--appJS for sw activation-->
+    <script src="/app/app.js"></script>
+    <!--JavaScript-->
+    <script src="/static/js/homeFunctions.js"></script>
+    <!--Bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

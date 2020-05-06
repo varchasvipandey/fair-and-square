@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Grenze|Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Righteous", cursive;
+  background: #141414;
+  color: white;
+}
+
+.main-logo {
+  width: 60%;
+}
+
+.form-cover {
+  padding: 3em;
+  border: 1px solid white;
+}
+
+.home-link {
+  color: #1b7ec0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.home-link:hover {
+  color: #2d97df !important;
+}
+
+.active {
+  color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.active:hover {
+  color: grey;
+}
+
+header #social-nav {
+  float: right;
+  padding: 1em;
+}
+
+header #social-nav a {
+  padding: 3px;
+  font-size: 1.4em !important;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header #social-nav a:hover {
+  color: #959596;
+}
+
+.error-text {
+  color: red;
+}
+
+#landing-page {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+#landing-page img.logo {
+  margin-bottom: 3em;
+}
+
+#landing-page div.nav-buttons {
+  margin-bottom: 4em;
+}
+
+div#leader-board-and-game-instructions .leader-board-box {
+  border: 1px solid white;
+}
+
+.disable-view {
+  display: none;
+}
+
+#footer {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  background: #2f4353;
+  position: relative;
+  height: 120px;
+  padding: 1em;
+}
+
+#footer #developer {
+  text-align: center;
+}
+
+#footer #developer-links {
+  text-align: right;
+  font-size: 1.2em;
+}
+
+#footer #developer-links a {
+  padding: 0.4em;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background-color: #2f4353 !important;
+  background-image: linear-gradient(115deg, #151616 0%, #181818bb 74%) !important;
+}
+
+.card-header {
+  background: rgba(20, 20, 20, 0.884);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.card-header:hover {
+  background: #2f4353;
+}
+
+.card-header h3 {
+  text-align: center;
+  font-family: "Bree Serif", serif;
+}
+
+.card-header button.btn {
+  color: white;
+  width: 100%;
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.card-body {
+  background: #141414;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1em;
+}
+
+.game-html {
+  padding: 2em;
+}
+
+.functional-buttons {
+  margin-bottom: 1em;
+}
+
+.functional-buttons #redirect {
+  float: right;
+}
+
+section.game-over-page h1 {
+  font-size: 8em;
+}
+
+#game-1-inst-modal-button,
+#game-2-inst-modal-button {
+  color: #141414;
+}
+
+.modal-content .modal-header,
+.modal-content .modal-footer {
+  background: rgba(20, 20, 20, 0.884);
+  border: none;
+  border-radius: 0%;
+}
+
+.modal-content .modal-body {
+  background: #141414;
+  line-height: 20px;
+}
+
+.modal-content .modal-footer {
+  text-align: center;
+}
+
+.modal-footer .btn {
+  width: 100%;
+}
+
+@media (max-width: 884px) {
+  h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 808px) {
+  #leader-board-and-game-instructions #leader-board-filter button {
+    font-size: 0.6em;
+    width: 7em;
+  }
+}
+
+@media (max-width: 767px) {
+  #footer {
+    height: 200px;
+  }
+  #footer #copyright {
+    text-align: center;
+  }
+  #footer #developer-links {
+    text-align: center;
+  }
+  #leader-board-and-game-instructions #leader-board-filter button {
+    font-size: 1em;
+    width: 6em;
+  }
+}
+
+@media (max-width: 335px) {
+  header #social-nav {
+    font-size: 0.7em;
+  }
+  #landing-page img.logo {
+    width: 80%;
+  }
+  #landing-page .nav-buttons .btn {
+    font-size: 0.8em;
+    width: 9em;
+  }
+  .card-body p {
+    font-size: 0.8em;
+  }
+  section.game-over-page h1 {
+    font-size: 3em;
+  }
+  section.game-over-page .nav-buttons a.btn {
+    width: 10em !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="/static/style/style.css" />
+    <title>Fair And Square :: Login</title>
+    <link
+      rel="icon"
+      href="/static/img/icons/icon-96.png"
+      type="image/png"
+      sizes="96x96"
+    />
+
+    <link rel="manifest" href="/app/manifest.json" />
+  </head>
+
+  <body>
+    <!--Title area-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--LOGO-->
+        <div class="col-sm-6 offset-sm-3 mt-4">
+          <img
+            class="rounded mx-auto d-block main-logo"
+            src="/static/img/main-logo.png"
+            alt="fairAndSquare"
+          />
+        </div>
+        <!--Selection Nav-->
+        <div class="col-sm-6 offset-sm-3 mt-2 mb-2">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a
+                class="nav-link home-link bring-signup active"
+                href="#signup-form"
+                >Create Account</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link home-link bring-login" href="#login-form"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link home-link free-play"
+                href="/home"
+                onclick="localStorage.clear()"
+                >Free Play</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--End title area-->
+    <!--Forms area-->
+    <div class="container">
+      <div class="row">
+        <!--LOGIN FORM-->
+        <div class="col-sm-6 offset-sm-3 mb-2" id="login-form">
+          <form class="form-cover" action="/users/login" method="POST">
+            <div class="form-group">
+              <input
+                type="email"
+                id="email-field"
+                class="form-control"
+                placeholder="Email address"
+                name="email"
+                required
+              />
+              <small id="emailhelp" class="form-text text-muted"
+                >Your registered email</small
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="password-field"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+                required
+              />
+            </div>
+            <button
+              class="btn btn-primary"
+              style="width: 100%;"
+              onclick="login()"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+        <!--SIGNUP FORM-->
+        <div class="col-sm-6 offset-sm-3 mb-2" id="signup-form">
+          <form class="form-cover" action="/users" method="POST">
+            <div class="form-group">
+              <input
+                type="text"
+                id="new-name-field"
+                class="form-control"
+                placeholder="Username"
+                name="name"
+                required
+              />
+              <small id="namehelp" class="form-text text-muted"
+                >Enter your gaming name</small
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="new-email-field"
+                class="form-control"
+                placeholder="Email address"
+                name="email"
+                required
+              />
+              <small id="newemailhelp" class="form-text text-muted"
+                >We'll not share your email address with anyone</small
+              >
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="new-password-field"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+                required
+              />
+              <small id="newpasswordhelp" class="form-text text-muted"
+                >Consider going for a strong password</small
+              >
+            </div>
+            <button
+              class="btn btn-primary"
+              style="width: 100%;"
+              onclick="signup()"
+            >
+              Create Account
+            </button>
+            <a href="#login-form" class="bring-login"
+              >Already have an account?</a
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End forms area-->
+
+    <template>HIII</template>
+    <!--Jquery cdn-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--appJS for sw activation-->
+    <script src="/app/app.js"></script>
+    <!--JS-->
+    <script src="/static/js/mainFunctions.js"></script>
+    <script>
+      (function() {
+        window.location.reload();
+      });
+    </script>
+  </body>
+</html>
