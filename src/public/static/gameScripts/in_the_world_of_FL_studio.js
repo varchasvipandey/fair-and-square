@@ -237,7 +237,7 @@ function hitBomb(player, bomb) {
   gameOverLoad(gameOver);
   gameOverSounds();
   leveluptext.setText("Game Over");
-  //compareScore(score);
+  compareScore(score);
   sendScore(score);
 }
 
@@ -266,7 +266,7 @@ function compareScore(score) {
   if (score > currentHighScore) {
     alert("NEW HIGH SCORE");
     localStorage.setItem("currentHighScore", score);
-    //sendScore(score);
+    sendScore(score);
   }
   return;
 }
